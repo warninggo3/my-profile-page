@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>자기소개 원페이지</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="nav-brand">홍길동</div>
+			<ul class="nav-menu">
+				<li><a href="#about">소개</a></li>
+				<li><a href="#skills">기술</a></li>
+				<li><a href="#portfolio">포트폴리오</a></li>
+				<li><a href="#contact">연락처</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section id="hero">
+			<h1>안녕하세요, 홍길동입니다.</h1>
+			<p>사용자 경험을 고민하는 웹 개발자입니다.</p>
+			<img class="profile-image" src="profile.jpg" alt="홍길동 프로필 이미지" />
+		</section>
+
+		<section id="about">
+			<h2>소개</h2>
+			<p>
+				문제를 구조적으로 분석하고, 이해하기 쉬운 인터페이스를 만드는 데에 관심이 많습니다.
+				프론트엔드와 백엔드 모두 경험하며 사용자에게 가치 있는 서비스를 구현하는 것을 목표로 합니다.
+			</p>
+		</section>
+
+		<section id="skills">
+			<h2>기술 스택</h2>
+			<div class="skill-cards">
+				<article class="card">
+					<h3>HTML5</h3>
+					<p>시맨틱 마크업 기반 페이지 구조 설계</p>
+				</article>
+				<article class="card">
+					<h3>CSS3</h3>
+					<p>반응형 레이아웃 및 UI 스타일링</p>
+				</article>
+				<article class="card">
+					<h3>JavaScript</h3>
+					<p>인터랙션 구현 및 동적 기능 개발</p>
+				</article>
+				<article class="card">
+					<h3>Python</h3>
+					<p>데이터 처리 및 백엔드 로직 개발</p>
+				</article>
+				<article class="card">
+					<h3>React</h3>
+					<p>컴포넌트 기반 프론트엔드 개발</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="portfolio">
+			<h2>포트폴리오</h2>
+			<div class="portfolio-cards">
+				<article class="card">
+					<h3>프로젝트 1</h3>
+					<p>할 일 관리 웹앱 - 일정 등록, 수정, 삭제 기능 구현</p>
+				</article>
+				<article class="card">
+					<h3>프로젝트 2</h3>
+					<p>영화 검색 사이트 - 외부 API 연동과 검색 UI 개발</p>
+				</article>
+				<article class="card">
+					<h3>프로젝트 3</h3>
+					<p>개인 블로그 템플릿 - 마크다운 기반 글 작성 환경 구축</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="contact">
+			<h2>연락처</h2>
+			<p>이메일: <a href="mailto:hong@example.com">hong@example.com</a></p>
+			<p>GitHub: <a href="https://github.com/honggildong" target="_blank" rel="noopener noreferrer">github.com/honggildong</a></p>
+		</section>
+	</main>
+
+	<footer>
+		<p>© 2026 홍길동. All Rights Reserved.</p>
+	</footer>
+
+	<script>
+		const revealSections = document.querySelectorAll("main section");
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("is-visible");
+						observer.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.15 }
+		);
+
+		revealSections.forEach((section) => observer.observe(section));
+	</script>
+</body>
+</html>
